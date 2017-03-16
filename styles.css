@@ -1,12 +1,12 @@
 body {
-	background: #CA0E0E;
-	font-size: smaller;
+	background: #FF6600;
+	font-size: 110%;
 	color: white;
 	padding-bottom: 20px;
 }
 
 pre {
-	white-space: nowrap;
+	white-space: normal;
 	width: 100%;
 	padding: 2px;
 }
@@ -40,7 +40,7 @@ input[type=checkbox]:hover {
 	position: fixed;
 	right: 0;
 	bottom: 2px;
-	background: #CA0E0E;
+	background: #FF6600;
 	padding: 5px 0 0 5px;
 }
 
@@ -50,15 +50,15 @@ input[type=checkbox]:hover {
 }
 
 ::-webkit-scrollbar-track {
-	background: #CA0E0E;
+	background: #FF6600;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #a31919;
+	background: #FF8800;
 }
 
 ::-webkit-scrollbar-corner {
-	background: #CA0E0E;
+	background: #FF6600;
 }
 
 label {
