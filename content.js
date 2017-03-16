@@ -178,7 +178,10 @@ new function() {
 				var maxHeight = Math.round(window.innerHeight * 0.4);
 				var maxWidth = Math.round(window.innerWidth * 0.4);
 				var height = data.height < maxHeight ? data.height : maxHeight;
-				var width = data.width < maxWidth ? data.width : maxWidth;
+
+                var width = options['fullwidth'] ? Math.round(window.innerWidth) * 0.8 : 
+                    data.width < maxWidth ? data.width : maxWidth;
+
 				popup.height = (width == maxWidth ? height + 10 : height) + 'px'; // scroll fix
 				popup.width = (height == maxHeight ? width + 10 : width) + 'px'; // scroll fix
 				popup.style.height = popup.height;

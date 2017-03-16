@@ -16,7 +16,8 @@ function initDefaultOptions() {
 		showIcon: true,
 		ignore404others: true,
 		ignoreBlockedByClient: true,
-		relativeErrorUrl: true
+		relativeErrorUrl: true,
+        fullwidth: true
 	};
 	for(var option in optionsValues) {
 		if(typeof localStorage[option] == 'undefined') {
@@ -83,8 +84,8 @@ function handleInitRequest(data, sender, sendResponse) {
 	sendResponse({
 		showIcon: typeof localStorage['icon_' + tabHost] != 'undefined' ? localStorage['icon_' + tabHost] : localStorage['showIcon'],
 		showPopup: typeof localStorage['popup_' + tabHost] != 'undefined' ? localStorage['popup_' + tabHost] : localStorage['showPopup'],
-		showPopupOnMouseOver: localStorage['showPopupOnMouseOver']
-
+		showPopupOnMouseOver: localStorage['showPopupOnMouseOver'],
+        fullwidth: localStorage['fullwidth']
 	});
 }
 

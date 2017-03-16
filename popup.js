@@ -43,7 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		clearNode.remove();
 	}
 	else {
-		errorsNode.innerHTML = request.errors;
+        shortErrors = request.errors.split('\n').slice(0, 2)
+		errorsNode.innerHTML = shortErrors;
 
 		clearNode.onclick = function() {
 			closePopup(isIFrame);
