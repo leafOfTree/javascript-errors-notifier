@@ -89,6 +89,11 @@ function handleInitRequest(data, sender, sendResponse) {
 	});
 }
 
+function isErrorIgnoredByRegexp(errorText) {
+    var ignoreError = errorText.match(/Warning: React attempted to reuse markup/);
+    return ignoreError;
+}
+
 function handleErrorsRequest(data, sender, sendResponse) {
 	var popupErrors = [];
 	var tabHost = getBaseHostByUrl(data.url);
@@ -100,6 +105,10 @@ function handleErrorsRequest(data, sender, sendResponse) {
 		if(localStorage['ignoreExternal'] && errorHost != tabHost) {
 			continue;
 		}
+        //if (isErrorIgnoredByRegexp(error.text)) {
+            //continue;
+        //}
+
 		if(error.is404) {
 			if(ignoredUrlsHashes[getIgnoredUrlHash(error.url)] || isUrlIgnoredByType(error.url)) {
 				delete data.errors[i];

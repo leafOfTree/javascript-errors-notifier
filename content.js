@@ -115,6 +115,7 @@ new function() {
 			}));
 		}
 
+        console.log('error')
 		// handle console.error()
 		var consoleErrorFunc = window.console.error;
 		window.console.error = function() {
@@ -179,7 +180,7 @@ new function() {
 				var maxWidth = Math.round(window.innerWidth * 0.4);
 				var height = data.height < maxHeight ? data.height : maxHeight;
 
-                var width = options['fullwidth'] ? Math.round(window.innerWidth) * 0.8 : 
+                var width = options['fullwidth'] ? Math.round(window.innerWidth) * 0.9 : 
                     data.width < maxWidth ? data.width : maxWidth;
 
 				popup.height = (width == maxWidth ? height + 10 : height) + 'px'; // scroll fix

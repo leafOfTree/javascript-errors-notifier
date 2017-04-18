@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		'img/popup_on.png'
 	]);
 
+
 	if(!request.errors) {
 		errorsNode.innerHTML = '<p style="padding: 20px">There are no errors on this page :(</p>';
 		copyNode.remove();
@@ -44,6 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 	else {
         shortErrors = request.errors.split('\n').slice(0, 2)
+        if (shortErrors[1]) {
+            shortErrors[1] = shortErrors[1].replace('http://localhost:3000', '')
+        }
 		errorsNode.innerHTML = shortErrors;
 
 		clearNode.onclick = function() {
