@@ -105,9 +105,9 @@ function handleErrorsRequest(data, sender, sendResponse) {
 		if(localStorage['ignoreExternal'] && errorHost != tabHost) {
 			continue;
 		}
-        //if (isErrorIgnoredByRegexp(error.text)) {
-            //continue;
-        //}
+        if (isErrorIgnoredByRegexp(error.text)) {
+            continue;
+        }
 
 		if(error.is404) {
 			if(ignoredUrlsHashes[getIgnoredUrlHash(error.url)] || isUrlIgnoredByType(error.url)) {
